@@ -7,10 +7,10 @@ import Slider from './components/Slider'
 function App() {
 
   return (
-    <main className='max-h-screen flex flex-col'>
+    <main className='h-screen flex flex-col'>
       <Slider />
       <Headline />
-      <div className="hidden sm:grid grid-cols-12 overflow-y-auto">
+      <div className="hidden sm:grid grid-cols-12 overflow-y-auto grow">
         <Infopanel />
         <ProjectViewer />
       </div>

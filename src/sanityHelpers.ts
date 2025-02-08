@@ -1,5 +1,20 @@
 import { createClient } from "@sanity/client";
 
+const projectsQuery = `*[_type == "project"] {
+    name,
+    description,
+    image {
+        asset->{
+            _id,
+            url
+        },
+        alt
+    },
+    link,
+    skills,
+    year
+}`
+
 export const client = createClient({
     projectId: 'fyzzy8lv',
     dataset: 'production',
@@ -8,7 +23,7 @@ export const client = createClient({
 })
 
 export async function getProjects() {
-    const posts = await client.fetch('*[_type == "project"]')
+    const posts = await client.fetch(projectsQuery)
     return posts
 }
 
