@@ -15,29 +15,31 @@ const Projects: React.FC<ProjectsProps> = ( { projectsArr, selected, handleProje
     )
 
     return (
-        <div className="w-full p-5 col-span-4 border-r border-neutral-700">
-        <h2 className={`font-bold dark:text-neutral-400`}>PROJECTS</h2>
-        <div className="mt-5 border-t border-neutral-700">
-            {projectsArr.map((project, index) => {
-                return (
-                    <button 
-                        key={project.name} 
-                        className="w-full border-b border-neutral-700 text-lg flex flex-col cursor-pointer"
-                        onClick={() => handleProjectSelect(index)}
-                    >
-                        <div className='w-full flex justify-between items-center'>
-                            <div className="flex gap-4 items-center">
-                                {/* <StarIcon className="blur-[1px]"/> */}
-                                <div className={`${index === selected && "underline"} py-6 text-2xl font-bold`}>{project.name}</div>
+        <div className="w-full col-span-4 border-r border-neutral-700 h-full overflow-y-auto">
+            <div className='sticky top-0 p-5 bg-neutral-950'>
+                <h2 className={`font-bold dark:text-neutral-400`}>PROJECTS</h2>
+            </div>
+            <div className="border-neutral-700 px-5 pb-5 overflow-y-auto">
+                {projectsArr?.map((project, index) => {
+                    return (
+                        <button 
+                            key={project.name} 
+                            className={`w-full border-b ${index === 0 ? 'border-t' : ''} border-neutral-700 text-lg flex flex-col cursor-pointer`}
+                            onClick={() => handleProjectSelect(index)}
+                        >
+                            <div className='w-full flex justify-between items-center'>
+                                <div className="flex gap-4 items-center">
+                                    {/* <StarIcon className="blur-[1px]"/> */}
+                                    <div className={`${index === selected && "underline"} py-6 text-2xl font-bold`}>{project.name}</div>
+                                </div>
+                                <div className="border border-neutral-700 px-3 rounded-full">{project.year}</div>
                             </div>
-                            <div className="border border-neutral-700 px-3 rounded-full">{project.year}</div>
-                        </div>
-                        {index === selected && description}
-                    </button>
-                )
-            })}
+                            {index === selected && description}
+                        </button>
+                    )
+                })}
+            </div>
         </div>
-    </div>
     )
 }
 

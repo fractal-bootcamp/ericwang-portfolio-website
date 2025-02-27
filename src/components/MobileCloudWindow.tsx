@@ -18,7 +18,7 @@ const MobileCloudWindow = () => {
   }
 
   return (
-    <div className="flex justify-center">
+    <div className="relative flex justify-center">
         <div className="absolute z-10">
             <CloudWindow color={'black'} className="h-full w-full"/>
         </div>

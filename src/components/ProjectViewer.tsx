@@ -27,7 +27,7 @@ const ProjectViewer = () => {
                     <h2 className={`font-bold pb-5 dark:text-neutral-400`}>PROJECT DETAIL</h2>
                     <ExternalLink href="https://github.com/ewang0" text="Code" />
                 </div>
-                <Gallery selectedImgUrl={projectsArr[selected]?.image.asset.url} />
+                <Gallery selectedImgUrl={projectsArr[selected]?.image.asset.url} skills={projectsArr[selected]?.skills} />
             </div>
         </>
     )
