@@ -2,12 +2,24 @@ import { motion } from "framer-motion"
 // import { StarIcon } from "./Icons"
 
 const slides = [
-    { title: "Web Design" },
-    { title: "Branding" },
-    { title: "UI/UX Design" },
-    { title: "Web Development" },
-    { title: "SEO Optimization" },
-    { title: "E-Commerce " },
+    { title: "React" },
+    { title: "Next.js" },
+    { title: "Typescript" },
+    { title: "Tailwind CSS" },
+    { title: "Drizzle ORM" },
+    { title: "Vercel AI SDK" },
+    { title: "Supabase" },
+    { title: "Prisma" },
+    { title: "Sanity" },
+    { title: "tRPC"},
+    { title: "Node" },
+    { title: "Express" },
+    { title: "MongoDB" },
+    { title: "PostgreSQL" },
+    { title: "AWS" },
+    { title: "Docker" },
+    { title: "CI/CD" },
+    { title: "Authentication" },
 ]
 
 const Slider = () => {

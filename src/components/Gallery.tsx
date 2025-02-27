@@ -1,20 +1,23 @@
 import React from 'react'
+import '../App.css'
 
-const Gallery = () => {
+interface GalleryProps {
+    selectedImgUrl: string | undefined,
+    skills: string[]
+}
+
+const Gallery: React.FC<GalleryProps> = ({ selectedImgUrl, skills }) => {
   return (
-    <div className='grid grid-cols-1 gap-3 w-full  '>
-      <img src='/gallery/metvirtual/metvirtual-2.jpg' className='bg-neutral-800 w-full' alt='' draggable={false} />
-      <img src='/gallery/beans/beans-4.jpg' className='bg-neutral-800 w-full' alt='' draggable={false} />
-      <img src='/gallery/gemini/gemini-5.jpg' className='bg-neutral-800 w-full' alt='' draggable={false} />
-      <img src='/gallery/flipkit/flipkit-4.jpg' className='bg-neutral-800 w-full' alt='' draggable={false} />
-      <img src='/gallery/gemini/gemini-1.jpg' className='bg-neutral-800 w-full' alt='' draggable={false} /> 
-      <img src='/gallery/flipkit/flipkit-3.jpg' className='bg-neutral-800 w-full' alt='' draggable={false} />
-      <img src='/gallery/gemini/gemini-2.jpg' className='bg-neutral-800 w-full' alt='' draggable={false} />
-      <img src='/gallery/seed/seed-2.jpg' className='bg-neutral-800 w-full' alt='' draggable={false} />
-      <img src='/gallery/hua/hua-ban-1.jpg' className='bg-neutral-800 w-full' alt='' draggable={false} />
-      <img src='/gallery/flipkit/flipkit-2.jpg' className='bg-neutral-800 w-full' alt='' draggable={false} />
-      <img src='/gallery/beans/beans-3.jpg' className='bg-neutral-800 w-full' alt='' draggable={false} />
-      <img src='/gallery/metvirtual/metvirtual-1.jpg' className='bg-neutral-800 w-full' alt='' draggable={false} />
+    <div className='grid grid-cols-1 gap-3 w-full'>
+      <div className='relative'>
+        <div className='overlay absolute inset-0 z-0' />
+        <img src={selectedImgUrl} className='w-full' alt='' draggable={false} />
+      </div>
+      <div className='flex flex-wrap gap-4 mt-4'>
+        {skills?.map((skill) => (
+          <div key={skill} className="border border-neutral-700 px-3 rounded-full">{skill}</div>
+        ))}
+      </div>
     </div>
   )
 }

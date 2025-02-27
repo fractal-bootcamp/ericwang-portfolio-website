@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Headline = () => {
   return (
     <nav className='flex justify-center items-center border-y border-neutral-700 p-4 sm:justify-between sm:p-5'>
