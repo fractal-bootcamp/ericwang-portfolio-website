@@ -19,7 +19,7 @@ const MobileCloudWindow = () => {
 
   return (
     <div className="relative flex justify-center">
-        <div className="absolute z-10">
+        <div className="w-full h-full absolute z-10 md:w-auto md:h-auto">
             <CloudWindow color={'black'} className="h-full w-full"/>
         </div>
         <ParallaxBanner

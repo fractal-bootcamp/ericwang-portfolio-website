@@ -3,18 +3,26 @@ import Infopanel from './components/Infopanel'
 import Headline from './components/Headline'
 import ProjectViewer from './components/ProjectViewer'
 import Slider from './components/Slider'
-import ExternalLink from './components/ExternalLink'
 import Footer from './components/Footer'
+import MobileCloudWindow from './components/MobileCloudWindow'
+import MobileInfoPanel from './components/MobileInfoPanel'
+import MobileNav from './components/MobileNav'
 function App() {
 
   return (
     <main className='h-screen flex flex-col relative'>
-      <div className='overlay absolute inset-0 z-0'></div>
+      <div className='overlay absolute inset-0 z-0' />
       <Slider />
       <Headline />
-      <div className="hidden sm:grid grid-cols-12 overflow-y-hidden grow z-10">
+      <div className="hidden md:grid grid-cols-12 overflow-y-hidden grow z-10">
         <Infopanel />
         <ProjectViewer />
+      </div>
+      <div className='flex flex-col md:hidden'>
+        <MobileNav />
+        <MobileCloudWindow />
+        <ProjectViewer />
+        <MobileInfoPanel />
       </div>
       <Footer />
     </main>
