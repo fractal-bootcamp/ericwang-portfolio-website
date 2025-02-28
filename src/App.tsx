@@ -5,8 +5,9 @@ import ProjectViewer from './components/ProjectViewer'
 import Slider from './components/Slider'
 import Footer from './components/Footer'
 import MobileCloudWindow from './components/MobileCloudWindow'
-import MobileInfoPanel from './components/MobileInfoPanel'
+import MobileInfoPanel from './components/MobileInfopanel'
 import MobileNav from './components/MobileNav'
+
 function App() {
 
   return (

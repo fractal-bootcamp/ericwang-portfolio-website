@@ -2,11 +2,11 @@
 
 import { ParallaxBanner } from "react-scroll-parallax"
 import { CloudWindow } from "./icons/CloudWindow"
-// import { useTheme } from 'next-themes'
+import { useTheme } from "../components/theme/ThemeProvider"
 import { useState, useEffect } from "react"
 
 const MobileCloudWindow = () => {
-  // const { theme } = useTheme();
+  const { theme } = useTheme()
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
@@ -20,7 +20,7 @@ const MobileCloudWindow = () => {
   return (
     <div className="relative flex justify-center">
         <div className="w-full h-full absolute z-10 md:w-auto md:h-auto">
-            <CloudWindow color={'black'} className="h-full w-full"/>
+            <CloudWindow color={theme === 'dark' ? 'black' : 'white'} className="h-full w-full"/>
         </div>
         <ParallaxBanner
             layers={[{ image: '/clouds-background.jpg', speed: -15 }]}
