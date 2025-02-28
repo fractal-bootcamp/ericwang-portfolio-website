@@ -34,7 +34,7 @@ const ProjectViewer = () => {
                     </div>
                     <ExternalLink href="https://github.com/ewang0" text="Code" />
                 </div>
-                <div className='pb-5 px-5'>
+                <div className='hidden md:block pb-5 px-5'>
                     <Gallery selectedImgUrl={projectsArr[selected]?.image.asset.url} skills={projectsArr[selected]?.skills} />
                 </div>
             </div>
