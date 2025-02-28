@@ -6,9 +6,6 @@ type IconSvgProps = SVGProps<SVGSVGElement> & {
 }
 
 export const CloudWindow = ({
-	size,
-	width,
-	height,
     color,
 	...props
 }: IconSvgProps) => (
