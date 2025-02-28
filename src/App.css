@@ -5,5 +5,5 @@
 }
 
 .overlay {
-  @apply w-full h-full bg-[url('https://framerusercontent.com/images/rR6HYXBrMmX4cRpXfXUOvpvpB0.png')] bg-repeat bg-[109px] opacity-5 rounded-none;
+  @apply w-full h-full bg-[url('https://framerusercontent.com/images/rR6HYXBrMmX4cRpXfXUOvpvpB0.png')] bg-repeat bg-[109px] opacity-4 rounded-none;
 }

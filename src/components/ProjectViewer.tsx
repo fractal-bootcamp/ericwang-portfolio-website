@@ -22,8 +22,8 @@ const ProjectViewer = () => {
     return (
         <>
             <Projects projectsArr={projectsArr} selected={selected} handleProjectSelect={handleProjectSelect} />
-            <div className="w-full overflow-y-auto col-span-6 px-5 pb-5 sm:p-4">
-                <div className='flex justify-between'>
+            <div className="col-span-8 w-full overflow-y-auto px-5 pb-5 sm:p-4 lg:col-span-6">
+                <div className='hidden md:flex justify-between'>
                     <h2 className={`font-bold pb-5 dark:text-neutral-400`}>PROJECT DETAIL</h2>
                     <ExternalLink href="https://github.com/ewang0" text="Code" />
                 </div>
