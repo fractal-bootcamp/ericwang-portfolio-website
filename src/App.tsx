@@ -11,8 +11,8 @@ import MobileNav from './components/MobileNav'
 function App() {
 
   return (
-    <main className='h-screen flex flex-col relative'>
-      <div className='overlay absolute inset-0 z-0' />
+    <main className='h-full md:h-screen flex flex-col relative'>
+      <div className='overlay absolute inset-0 z-0 w-full h-full' />
       <Slider />
       <Headline />
       <div className="hidden md:grid grid-cols-12 overflow-y-hidden grow z-10">

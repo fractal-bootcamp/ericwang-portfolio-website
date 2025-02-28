@@ -2,12 +2,13 @@ import React from 'react'
 import { Project } from '../types'
 import '../App.css'
 import { useTheme } from '../components/theme/ThemeProvider'
-
+import StarIcon from './icons/StarIcon'
 interface ProjectsProps {
     projectsArr: Project[],
     selected: number,
     handleProjectSelect: (index:number) => void
 }
+import Gallery from './Gallery'
 
 const Projects: React.FC<ProjectsProps> = ( { projectsArr, selected, handleProjectSelect  }) => {
     const { theme } = useTheme()
@@ -19,8 +20,8 @@ const Projects: React.FC<ProjectsProps> = ( { projectsArr, selected, handleProje
     )
 
     return (
-        <div className="w-full col-span-4 border-r border-neutral-700 h-full overflow-y-auto">
-            <div className={`sticky top-0 p-5 ${theme === 'dark' ? 'bg-neutral-950' : 'bg-white'}`}>
+        <div className="w-full col-span-4 border-r border-neutral-700 h-full overflow-y-auto z-10">
+            <div className={`sticky top-0 p-5 z-10 ${theme === 'dark' ? 'bg-neutral-950' : 'bg-white'}`}>
                 <div className='overlay absolute top-0 left-0 w-full h-full'></div>
                 <h2 className={`font-bold dark:text-neutral-400`}>PROJECTS</h2>
             </div>
@@ -33,13 +34,16 @@ const Projects: React.FC<ProjectsProps> = ( { projectsArr, selected, handleProje
                             onClick={() => handleProjectSelect(index)}
                         >
                             <div className='w-full flex gap-4 justify-between items-center'>
-                                <div className="flex gap-4">
-                                    {/* <StarIcon className="blur-[1px]"/> */}
+                                <div className="flex gap-4 items-center">
+                                    {index === selected && <StarIcon />}
                                     <div className={`${index === selected && "underline"} py-6 text-2xl font-bold text-left`}>{project.name}</div>
                                 </div>
                                 <div className="border border-neutral-700 px-3 rounded-full">{project.year}</div>
                             </div>
                             {index === selected && description}
+                            <div className='md:hidden'>
+                                {index === selected && <Gallery selectedImgUrl={project.image.asset.url} skills={project.skills} />}
+                            </div>
                         </button>
                     )
                 })}
