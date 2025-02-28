@@ -1,6 +1,7 @@
 import React from 'react'
 import { Project } from '../types'
 import '../App.css'
+import { useTheme } from '../components/theme/ThemeProvider'
 
 interface ProjectsProps {
     projectsArr: Project[],
@@ -9,6 +10,8 @@ interface ProjectsProps {
 }
 
 const Projects: React.FC<ProjectsProps> = ( { projectsArr, selected, handleProjectSelect  }) => {
+    const { theme } = useTheme()
+
     const description = (
         <div className='text-left pb-5'>
             Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
@@ -17,7 +20,7 @@ const Projects: React.FC<ProjectsProps> = ( { projectsArr, selected, handleProje
 
     return (
         <div className="w-full col-span-4 border-r border-neutral-700 h-full overflow-y-auto">
-            <div className='sticky top-0 p-5 bg-neutral-950'>
+            <div className={`sticky top-0 p-5 ${theme === 'dark' ? 'bg-neutral-950' : 'bg-white'}`}>
                 <div className='overlay absolute top-0 left-0 w-full h-full'></div>
                 <h2 className={`font-bold dark:text-neutral-400`}>PROJECTS</h2>
             </div>

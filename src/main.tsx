@@ -4,11 +4,13 @@ import './index.css'
 import App from './App.tsx'
 import { inject } from '@vercel/analytics'
 import { ParallaxProvider } from 'react-scroll-parallax'
-
+import { ThemeProvider } from './components/theme/ThemeProvider.tsx'
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <ParallaxProvider>
-      <App />
+      <ThemeProvider defaultTheme="dark" storageKey='vite-ui-theme'>
+        <App />
+      </ThemeProvider>
     </ParallaxProvider>
   </StrictMode>,
 )
