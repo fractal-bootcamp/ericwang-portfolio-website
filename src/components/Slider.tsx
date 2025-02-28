@@ -7,7 +7,6 @@ const slides = [
     { title: "Typescript" },
     { title: "Tailwind CSS" },
     { title: "Drizzle ORM" },
-    { title: "Vercel AI SDK" },
     { title: "Supabase" },
     { title: "Prisma" },
     { title: "Sanity" },
@@ -30,10 +29,10 @@ const Slider = () => {
             <motion.div
                 className="flex"
                 animate={{
-                    x: [ `0px`, '-1104.55px'],
+                    x: [ `0px`, '-4974.84px'],
                     transition: {
                         ease: 'linear',
-                        duration: 16,
+                        duration: 75,
                         repeat: Infinity,
                     }
                 }}
