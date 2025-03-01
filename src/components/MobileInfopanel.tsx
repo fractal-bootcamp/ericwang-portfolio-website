@@ -1,7 +1,6 @@
 'use client'
 
 import StarBanner  from "./StarBanner"
-import ExternalLink from "./ExternalLink"
 import { useTheme } from "./theme/ThemeProvider"
 
 const MobileInfopanel = () => {
