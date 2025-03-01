@@ -11,8 +11,6 @@ const Footer = () => {
       <div className='flex relative z-10 justify-center items-center md:border-t border-neutral-700 mx-5 sm:justify-between py-5'>
         <div className='flex items-center justify-between border-neutral-700 w-full'>
           <div className={`text-sm ${theme === 'dark' ? 'text-neutral-400' : ''}`}>© 2025</div>
-          <div className='flex items-center gap-4'>
-          </div>
           <div className='hidden md:flex items-center gap-4'>
             <ExternalLink href="https://github.com/ewang0" text="Github" />
             <ExternalLink href="https://github.com/ewang0" text="LinkedIn" />
